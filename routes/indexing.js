@@ -1,6 +1,8 @@
 "use strict";
 const router = require("express").Router();
 
-router.get("/", (req, res) => res.send("Indexing API!"));
+const { handleIndexing } = require("../controllers/indexing");
+
+router.get("/", handleIndexing);
 
 module.exports = router;
