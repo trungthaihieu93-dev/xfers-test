@@ -14,7 +14,7 @@ const Currency = getCurrencyModel(sequelize);
 const Rate = getRateModel(sequelize);
 
 // initiate relations
-Currency.belongsToMany(Rate, { through: "CurrencyRate" });
-Rate.belongsToMany(Currency, { through: "CurrencyRate" });
+// rate
+Rate.belongsTo(Currency, { foreignKey: 'currencyId' });
 
 module.exports = sequelize;

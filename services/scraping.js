@@ -10,7 +10,7 @@ module.exports = async () => {
   try {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    await page.goto(scrapingURL);
+    await page.goto(scrapingURL, { waitUntil: 'load', timeout: 0 });
 
     const rates = await page.$$eval("th.pt-24 > p", (rates) =>
       rates.map((rate) =>
@@ -36,6 +36,7 @@ module.exports = async () => {
     const scrappingData = currencies.map((currency) => ({
       currency,
       rates: rates.map((rate) => {
+        console.log(getUpdatedTime(rate[1]))
         const currencyRate = {
           type: rate[0],
           buyPrice: prices[index],
@@ -48,10 +49,7 @@ module.exports = async () => {
       }),
     }));
 
-    return {
-      scrappingData,
-      currencies,
-    };
+    return scrappingData;
   } catch (error) {
     console.log(`${error}`.red);
     return null;

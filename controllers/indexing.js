@@ -12,7 +12,23 @@ module.exports = {
 
       if (data) {
         await Promise.all(data.map(async (record) => {
-          const query = 1;
+          let currency = await Currency.findOne({ where: { symbol: record.currency } });
+
+          if (!currency) {
+            currency = await Currency.create({
+              name: record.currency,
+              symbol: record.currency,
+            });
+          }
+
+          await Promise.all(record.rates.map(async (rate) => await Rate.create({
+            name: rate.type,
+            buyPrice: rate.buyPrice,
+            sellPrice: rate.sellPrice,
+            timestamp: rate.updatedAt,
+            currencyId: currency.id,
+          })));
+
         }));
 
         res.send("Done!");

@@ -8,11 +8,11 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     buyPrice: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     sellPrice: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     timestamp: {
