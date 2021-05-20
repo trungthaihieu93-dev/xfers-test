@@ -36,7 +36,6 @@ module.exports = async () => {
     const scrappingData = currencies.map((currency) => ({
       currency,
       rates: rates.map((rate) => {
-        console.log(getUpdatedTime(rate[1]))
         const currencyRate = {
           type: rate[0],
           buyPrice: prices[index],
