@@ -4,10 +4,10 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 require("colors");
 
-const sequelize = require("./services/db");
-const indexRoute = require("./routes");
-const indexingRoute = require("./routes/indexing");
-const kursRoute = require("./routes/kurs");
+const sequelize = require("../services/db");
+const indexRoute = require("../routes");
+const indexingRoute = require("../routes/indexing");
+const kursRoute = require("../routes/kurs");
 
 // initiate
 const server = express();
@@ -40,3 +40,5 @@ server.listen(parseInt(process.env.PORT, 10), () =>
     `Server is running at ${process.env.HOST}:${process.env.PORT}`.green
   )
 );
+
+module.exports = { server, sequelize };

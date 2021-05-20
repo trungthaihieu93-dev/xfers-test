@@ -31,7 +31,7 @@ module.exports = {
 
         }));
 
-        res.send("Done!");
+        res.send("Scrapping process was executed successfully!");
       } else {
         res.status(500).send(`Error while scraping!`);
       }
