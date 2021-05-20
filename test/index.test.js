@@ -5,6 +5,7 @@ const request = require('supertest');
 
 describe('API tests', () => {
   before(async () => {
+    // wait for db connection
     await sequelize.authenticate();
   });
 
