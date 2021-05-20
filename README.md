@@ -23,12 +23,19 @@ At source folder, run this command:
 Create a dotenv file following the format of **.env** file
 
 > HOST=localhost
+
 > PORT=7000
+
 > DB_HOST=localhost
+
 > DB_PORT=3306
+
 > DB_USER=root
+
 > DB_PASSWORD=mysql
+
 > DB_NAME=test
+
 
 After installing packages, run this command:
 
