@@ -24,7 +24,7 @@ describe('API tests', () => {
 
   it('Scraping process', (done) => {
     request(server)
-      .get('/')
+      .get('/api/indexing')
       .set('Accept', 'application/json')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)
@@ -37,7 +37,7 @@ describe('API tests', () => {
 
   it('Get Records With Date', (done) => {
     request(server)
-      .get('/')
+      .get('/api/kurs')
       .set('Accept', 'application/json')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)
@@ -50,7 +50,7 @@ describe('API tests', () => {
 
   it('Get Records With Symbol', (done) => {
     request(server)
-      .get('/')
+      .get('/api/kurs')
       .set('Accept', 'application/json')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)
@@ -63,7 +63,7 @@ describe('API tests', () => {
 
   it('Create Record', (done) => {
     request(server)
-      .get('/')
+      .get('/api/kurs')
       .set('Accept', 'application/json')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)
@@ -76,7 +76,7 @@ describe('API tests', () => {
 
   it('Update Record', (done) => {
     request(server)
-      .get('/')
+      .get('/api/kurs')
       .set('Accept', 'application/json')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)
@@ -89,7 +89,7 @@ describe('API tests', () => {
 
   it('Delete Record By Date', (done) => {
     request(server)
-      .get('/')
+      .get('/api/kurs')
       .set('Accept', 'application/json')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)

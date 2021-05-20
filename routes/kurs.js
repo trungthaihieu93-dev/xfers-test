@@ -7,7 +7,7 @@ const {
   handleDeleteByDate,
 } = require('../controllers/kurs');
 
-router.get("/", (req, res) => res.send("Kurs API!"))
+router.get("/", handleRead)
   .post('/', handleCreate)
   .put('/', handleUpdate)
   .delete('/:date', handleDeleteByDate);
